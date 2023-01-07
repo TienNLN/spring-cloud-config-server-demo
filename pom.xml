@@ -16,6 +16,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>2020.0.0</spring-cloud.version>
+        <project.build.finalName>spring-cloud-config-server-demo</project.build.finalName>
     </properties>
     <dependencies>
         <dependency>
@@ -64,6 +65,89 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>sit</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <finalName>${project.build.finalName}-sit</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/config/config-sit</directory>
+                        <filtering>true</filtering>
+                        <excludes>
+                            <exclude>**/*.pfx</exclude>
+                            <exclude>**/*.der</exclude>
+                            <exclude>**/*.pem</exclude>
+                            <exclude>**/*.key</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources/config/config-sit</directory>
+                        <filtering>false</filtering>
+                        <includes>
+                            <include>**/*.pfx</include>
+                            <include>**/*.der</include>
+                            <include>**/*.pem</include>
+                            <include>**/*.key</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <finalName>${project.build.finalName}-uat</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/config/config-uat</directory>
+                        <filtering>true</filtering>
+                        <excludes>
+                            <exclude>**/*.pfx</exclude>
+                            <exclude>**/*.der</exclude>
+                            <exclude>**/*.pem</exclude>
+                            <exclude>**/*.key</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources/config/config-uat</directory>
+                        <filtering>false</filtering>
+                        <includes>
+                            <include>**/*.pfx</include>
+                            <include>**/*.der</include>
+                            <include>**/*.pem</include>
+                            <include>**/*.key</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
