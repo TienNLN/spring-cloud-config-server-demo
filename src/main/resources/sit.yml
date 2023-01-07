@@ -2,3 +2,13 @@ name: app_test
 
 user:
   role: sit
+
+database:
+  url: sit_database
+  username: database_admin_sit
+  password: database_admin_sit
+
+redis:
+  url: redis_sit
+  username: redis_admin_sit
+  password: redis_admin_sit

@@ -2,3 +2,13 @@ name: app_test
 
 user:
   role: uat
+
+database:
+  url: uat_database
+  username: database_admin_uat
+  password: database_admin_uat
+
+redis:
+  url: redis_uat
+  username: redis_admin_uat
+  password: redis_admin_uat
