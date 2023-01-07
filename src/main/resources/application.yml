@@ -8,8 +8,6 @@ spring:
         git:
           uri: https://github.com/TienNLN/spring-cloud-config-server-demo.git
           clone-on-start: true
-          username: tien20001810@gmail.com
-          password: TienNguyen1810
 
   security:
     user:
