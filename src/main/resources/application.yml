@@ -24,4 +24,4 @@ logging:
       springframework:
         web:
           DEBUG
-    root: debug
+    root: trace
