@@ -12,7 +12,7 @@
                     password: TienNguyen1810
             composite[0]:
                 type: native
-                search-locations: src/main/resources/config
+                search-locations: config/{application}/{label}
     application:
         name: app
     profiles:
