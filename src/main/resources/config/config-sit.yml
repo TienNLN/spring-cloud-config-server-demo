@@ -12,3 +12,7 @@ redis:
   url: redis_sit
   username: redis_admin_sit
   password: redis_admin_sit
+
+spring:
+  profiles:
+    active: sit
