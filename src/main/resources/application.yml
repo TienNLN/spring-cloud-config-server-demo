@@ -13,7 +13,15 @@ spring:
         native:
           search-locations: config
 
+
   security:
     user:
       name: admin
       password: 123
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          DEBUG
+    root: info
