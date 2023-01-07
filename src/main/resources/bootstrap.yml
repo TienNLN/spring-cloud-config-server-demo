@@ -1,0 +1,23 @@
+  # https://cloud.spring.io/spring-cloud-config/reference/html/#_embedding_the_config_server
+  # Indicate whether the server should configure itself from its own remote repository
+  spring:
+    cloud:
+        config:
+            server:
+                bootstrap: true
+                git:
+                    uri: https://github.com/TienNLN/spring-cloud-config-server-demo.git
+                    clone-on-start: true
+                    username: tien20001810@gmail.com
+                    password: TienNguyen1810
+            composite[0]:
+                type: native
+                search-locations: src/main/resources/config
+    application:
+        name: app
+    profiles:
+        active: composite
+    security:
+        user:
+            name: admin
+            password: 123
