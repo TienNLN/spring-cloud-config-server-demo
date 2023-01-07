@@ -11,7 +11,7 @@ spring:
           username: tien20001810@gmail.com
           password: TienNguyen1810
         native:
-          search-locations: config
+          search-locations: classpath:config
 
 
   security:
