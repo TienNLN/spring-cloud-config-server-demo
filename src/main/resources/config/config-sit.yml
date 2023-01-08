@@ -5,7 +5,7 @@ user:
 
 database:
   url: sit_database
-  username: database_admin_sit
+  username: database_admin_sit_changed
   password: database_admin_sit
 
 redis:
