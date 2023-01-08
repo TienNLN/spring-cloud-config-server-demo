@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: app
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/TienNLN/spring-cloud-config-server-demo.git
+          clone-on-start: true
+          default-label: master
+          search-paths:
+           - /src/main/resources/config
+           - /src/main/resources/uri
+  security:
+    user:
+      name: admin
+      password: 123
+
+server:
+  port: 8881
