@@ -1,8 +1,3 @@
-name: config
-
-user:
-  role: sit
-
 database:
   url: sit_database
   username: database_admin_sit
